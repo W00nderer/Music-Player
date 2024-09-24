@@ -2,7 +2,7 @@
 
 @keyframes curr-forward-change {
   to {
-    transform: translateX(-270px);
+    transform: translateX(-400px);
     width: 200px;
     height: 200px;
     filter: brightness(30%);
