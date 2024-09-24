@@ -2,7 +2,7 @@
 
 @keyframes curr-forward-change {
   to {
-    transform: translateX(-400px);
+    transform: translateX(-230px);
     width: 200px;
     height: 200px;
     filter: brightness(30%);
@@ -11,7 +11,7 @@
 
 @keyframes next-forward-change {
   to {
-    transform: translateX(-270px);
+    transform: translateX(-230px);
     width: 300px;
     height: 300px;
     filter: brightness(100%);
@@ -20,7 +20,7 @@
 
 @keyframes prev-forward-change {
   to {
-    transform: translateX(-270px);
+    transform: translateX(-230px);
     filter: brightness(0%);
   }
 }
