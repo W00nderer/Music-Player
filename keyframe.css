@@ -1,0 +1,107 @@
+/*NEXT SONG PICTURE CHANGE*/
+
+@keyframes curr-forward-change {
+  to {
+    transform: translateX(-230px);
+    width: 200px;
+    height: 200px;
+    filter: brightness(30%);
+  }
+}
+
+@keyframes next-forward-change {
+  to {
+    transform: translateX(-230px);
+    width: 300px;
+    height: 300px;
+    filter: brightness(100%);
+  }
+}
+
+@keyframes prev-forward-change {
+  to {
+    transform: translateX(-230px);
+    filter: brightness(0%);
+  }
+}
+@keyframes next-next-pic-change {
+  to{
+    display: absolute;
+    transform: translateX(-316px);
+    filter: brightness(30%);
+  }
+}
+
+/*PREVIOUS SONG PICTURE CHANGE*/
+
+@keyframes curr-back-change {
+  to {
+    transform: translateX(230px);
+    width: 200px;
+    height: 200px;
+    filter: brightness(30%);
+  }
+}
+
+@keyframes next-back-change {
+  to {
+    transform: translateX(230px);
+    filter: brightness(0%);
+  }
+}
+
+@keyframes prev-back-change {
+  to {
+    transform: translateX(230px);
+    width: 300px;
+    height: 300px;
+    filter: brightness(100%);
+  }
+}
+@keyframes prev-prev-pic-change {
+  to{
+    display: absolute;
+    transform: translateX(316px);
+    filter: brightness(30%);
+  }
+}
+
+/* ADD SONG ANIMATIONS */
+
+@keyframes new-song-button-change {
+  to{
+    display: absolute;
+    z-index: 1;
+    transform: translateX(-316px);
+    filter: brightness(100%);
+  }
+}
+@keyframes new-song-button-back {
+  from{
+    display: absolute;
+    z-index: 1;
+    transform: translateX(-316px);
+    filter: brightness(100%);
+  }
+  to{
+    transform: translateX(0px);
+    filter: brightness(0%);
+  }
+}
+
+@keyframes add-screen-appear {
+  to{
+    filter: brightness(100%);
+    z-index: 2;
+  }
+}
+@keyframes add-screen-disap {
+  from{
+    filter: brightness(100%);
+    z-index: 2;
+  }
+  to{
+    filter: brightness(0%);
+    z-index: -1;
+  }
+}

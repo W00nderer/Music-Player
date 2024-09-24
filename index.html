@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Music Player</title>
+    <script src="https://kit.fontawesome.com/d1cc9f5d62.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="keyframe.css">
+
+  </head>
+  <body>
+    <main>
+      <img src = '' alt = 'prev prev song' id = 'prev-prev'>
+      <section id="songPictures">
+        <div id="prev">
+          <img src = "" alt="prev song" id="previous">
+        </div>
+        <div id="curr">
+          <img src = "" alt="current song" id="current">
+          <audio id="track">
+            <source src="" type="audio/mpeg">
+          </audio>
+        </div>
+        <div id="nex">
+          <img src = "" alt="next song" id="next">
+        </div>
+      </section>
+      <img src = '' alt = 'next next song' id = 'next-next'>
+      <p id="audio-name"></p>
+      <section id="slider-container">
+        <p id="start-dur">0:00</p>
+        <input type="range" min="0" max="100" value="0" class="slider" id="durationSlider">
+        <p id="end-dur">0:00</p>
+      </section>
+      <section id="controls">
+        <button id="prev-button"><i class="fa-solid fa-backward"></i></button>
+        <button id="play-button"><i class="fa-solid fa-play"></i></button>
+        <button id="next-button"><i class="fa-solid fa-forward"></i></button>
+      </section>
+      <button id="plus-button"><i class="fa-solid fa-plus"></i></button>
+    </main>
+    <section id ='add-new-song'>
+      <button id="cancel"><i class="fa-solid fa-x"></i></button>
+      <label for="mp3-input">Choose an audio file:</label>
+      <input type="file" id="mp3-input" class = 'file-input' accept="audio/mpeg" />
+      <label for="img-input">Choose an image file for the audio:</label>
+      <input type="file" id="img-input" class = 'file-input' accept="image/*" />
+      <label for="name-input">Enter the song name:</label>
+      <input type="text" id="name-input" placeholder="Enter song name"/>
+      <button id="submit">Submit</button>
+    </section>
+    <script src="initialize.js"></script>
+    <script src="dll.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
