@@ -5,7 +5,6 @@
 }
 
 html {
-  font-size: 62.5px;
   overflow-x: hidden;
 }
 
@@ -30,14 +29,14 @@ body {
 #next-next{
   position: absolute;
   right: 0;
-  top: 1.48rem;
+  top: 98px;
   width: 200px;
   height: 200px;
   filter: brightness(0%);
 }
 #prev-prev{
   position: absolute;
-  top: 1.48rem;
+  top: 98px;
   width: 200px;
   height: 200px;
   filter: brightness(0%);
@@ -63,9 +62,9 @@ body {
 #audio-name{ 
   position: absolute;
   color:white;
-  font-size: 0.5rem;
-  top: 55%;
-  left: 46.5%;
+  font-size: 34px;
+  top: 375px;
+  left: 647px;
 }
 
 #slider-container{
@@ -76,7 +75,7 @@ body {
   width: 100%;
 }
 #slider-container p{
-  font-size: 0.3rem;
+  font-size: 20px;
 }
 #durationSlider{
   margin: 30px;
@@ -124,19 +123,19 @@ button:hover{
 }
 
 #play-button{
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 70px;
+  height: 70px;
   margin-top: -15px;
 }
 
 #play-button i{
-  font-size: 0.5rem;
+  font-size: 34px;
 }
 
 #prev-button, #next-button{
   position: relative;
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 50px;
+  height: 50px;
 }
 #prev-button{
   right: 20px;
@@ -145,9 +144,9 @@ button:hover{
   left: 20px;
 }
 #plus-button{
-  width: 1.7rem;
-  height: 1.3rem;
-  font-size: 0.5rem;
+  width: 115px;
+  height: 80px;
+  font-size: 35px;
   filter: brightness(0%);
   position: absolute;
   right:3%;
@@ -160,8 +159,8 @@ button:hover{
   filter: brightness(0%);
   width: 800px;
   height: 500px;
-  left: 22%;
-  top: 10%;
+  left: 300px;
+  top: 60px;
   border-radius: 10px;
   border: 2px white solid;
   display:flex;
@@ -170,7 +169,7 @@ button:hover{
 }
 #add-new-song label{
   color: white;
-  font-size: 0.4rem;
+  font-size: 25px;
   margin:auto;
 }
 .file-input {
@@ -194,10 +193,10 @@ button:hover{
   width: 50%;
   height: 30px;
   margin-top:-10px;
-  font-size: 0.3rem;
+  font-size: 15px;
 }
 #submit{
-  font-size: 0.3rem;
+  font-size: 18px;
 }
 #cancel{
   width: 40px;
