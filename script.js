@@ -1,3 +1,8 @@
+let viewportWidth = window.innerWidth;
+window.addEventListener('resize', function() {
+  viewportWidth = window.innerWidth;
+});
+
 let onOff = false;
 //FUNCTION FOR PLAYING THE SONG
 function playFunction(){
@@ -15,16 +20,16 @@ function playFunction(){
 function nextFunction(){
   if(currentNode.next !== null){
     nextButton.disabled = true;
+    if(viewportWidth == 1536){
+      currPic.style.animation = "curr-forward-change .4s ease-in-out forwards";
+      nextPic.style.animation = "next-forward-change .4s ease-in-out forwards";
+      prevPic.style.animation = "prev-forward-change .4s ease-in-out forwards";
+      nextNextPic.style.animation = "next-next-pic-change .4s ease-in-out forwards";
 
-    currPic.style.animation = "curr-forward-change .4s ease-in-out forwards";
-    nextPic.style.animation = "next-forward-change .4s ease-in-out forwards";
-    prevPic.style.animation = "prev-forward-change .4s ease-in-out forwards";
-    nextNextPic.style.animation = "next-next-pic-change .4s ease-in-out forwards";
-
-    if(currentNode.next.next === null){
-      newSongButton.style.animation = 'new-song-button-change .4s ease-in-out forwards';
-    }
-    
+      if(currentNode.next.next === null){
+        newSongButton.style.animation = 'new-song-button-change .4s ease-in-out forwards';
+      }
+    }    
     setTimeout(() => {
       nextButton.disabled = false;
       currentNode = currentNode.next;

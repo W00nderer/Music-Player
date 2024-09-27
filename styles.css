@@ -44,13 +44,18 @@ body {
 }
 
 #current{
-  width: 320px;
-  height: 320px; 
+  width: calc(166px + (100vw / 10));
+  max-width: 100%;
+  height: calc(166px + (100vw / 10));
+  max-height: 100%;
+  z-index: 1;
 }
 
 #previous, #next{
-  width: 220px;
-  height: 220px; 
+  width: calc(143px + (100vw / 20));
+  height: calc(143px + (100vw / 20));
+  max-width: 100%;
+  max-height: 100%;
   filter:brightness(30%);
 }
 #previous{
@@ -60,12 +65,16 @@ body {
   right: 200px;
 }
 
+#name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 10px;
+}
 #audio-name{ 
-  position: absolute;
   color:white;
-  font-size: 0.6rem;
-  top: 55%;
-  left: 46%;
+  font-size: 38px;
 }
 
 #slider-container{
@@ -206,3 +215,33 @@ button:hover{
   right: 10px; 
   text-align: center;
 }
+/*@media only screen and (max-width:600px) {
+  #current{
+    width: 260px;
+    height: 260px;
+    z-index: 1;
+  }
+  #previous, #next, #next-next, #prev-prev{
+    width: 140px;
+    height: 140px; 
+  }
+  #next-next{
+    right:-170px;
+    top: 18.2%;
+  }
+  #previous{
+    left: 50px;
+  }
+  #next{
+    right: 50px;
+  }
+  #audio-name{
+    font-size: 0.5rem;
+    left: 42%;
+  }
+  #plus-button{
+    position: absolute;
+    right: -110px;
+    top: 22.5%;
+  }
+}  */
