@@ -3,6 +3,48 @@ window.addEventListener('resize', function() {
   viewportWidth = window.innerWidth;
 });
 
+//UPDATE THE TRACK
+function updateTrack() {
+  track.src = currentNode.data.audio;
+  songName.innerText = currentNode.data.name;
+
+  track.addEventListener('loadedmetadata', () => {
+    slider.max = Math.floor(track.duration);
+    totalTimeText.innerText = formatTime(track.duration);
+  });
+
+  track.addEventListener('timeupdate', () => {
+    slider.value = Math.floor(track.currentTime);
+    progressText.innerText = formatTime(track.currentTime);
+    const value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+    slider.style.background = `linear-gradient(to right, rgb(60, 8, 95) ${value}%, #ddd ${value}%)`;
+    if (track.currentTime >= track.duration) {
+      nextFunction();
+    }
+  });
+
+  slider.addEventListener('input', () => {
+    track.currentTime = slider.value;
+    if (!track.paused) {
+      isPlaying = true;
+      track.pause();
+    }
+  });
+
+  slider.addEventListener('change', function() {
+    if (isPlaying) {
+      track.play();
+      isPlaying = false;
+    }
+  });
+
+  changePicture(currentNode);
+
+  if (onOff) {
+    track.play();
+  }
+}
+
 let onOff = false;
 //FUNCTION FOR PLAYING THE SONG
 function playFunction(){
@@ -78,48 +120,6 @@ function formatTime(seconds) {
   return `${minutes}:${secs < 10 ? '0' + secs : secs}`;
 }
 
-//UPDATE THE TRACK
-function updateTrack() {
-  track.src = currentNode.data.audio;
-  songName.innerText = currentNode.data.name;
-
-  track.addEventListener('loadedmetadata', () => {
-    slider.max = Math.floor(track.duration);
-    totalTimeText.innerText = formatTime(track.duration);
-  });
-
-  track.addEventListener('timeupdate', () => {
-    slider.value = Math.floor(track.currentTime);
-    progressText.innerText = formatTime(track.currentTime);
-    const value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
-    slider.style.background = `linear-gradient(to right, rgb(60, 8, 95) ${value}%, #ddd ${value}%)`;
-    if (track.currentTime >= track.duration) {
-      nextFunction();
-    }
-  });
-
-  slider.addEventListener('input', () => {
-    track.currentTime = slider.value;
-    if (!track.paused) {
-      isPlaying = true;
-      track.pause();
-    }
-  });
-
-  slider.addEventListener('change', function() {
-    if (isPlaying) {
-      track.play();
-      isPlaying = false;
-    }
-  });
-
-  changePicture(currentNode);
-
-  if (onOff) {
-    track.play();
-  }
-}
-
 //CHANGE THE PICTURES
 function changePicture(current) {
   if (!current) {
@@ -128,11 +128,9 @@ function changePicture(current) {
   }  
 
   currPic.src = current.data.picture;
-  console.log(currPic.src);
 
   if (current.prev === null) {
     prevPic.src = 'nullPic.png';
-    console.log(prevPic.src);
 
   } else {
     prevPic.src = current.prev.data.picture;
